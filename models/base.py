@@ -22,8 +22,7 @@ class AlbumModel(Base, BaseExtended):
 class MediaModel(Base, BaseExtended):
     __tablename__ = "media"
     id = Column(String(length=27), primary_key=True, default=str(Ksuid()))
-    created_at: ColumnElement = Column(DateTime(), default=get_timestamp)
-    uploaded_at: ColumnElement = Column(String())
+    created_at: ColumnElement = Column(DateTime(), default=get_timestamp, index=True)
     thumbnail_path = Column(String())
     duration = Column(Integer(), index=True)
     webpage_url = Column(String())
